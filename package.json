@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "eslint bin src test && rm -rf lib && babel src -d lib &&  mocha",
-    "postinstall": "node lib/init.js"
+    "postinstall": "node lib/init.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -45,7 +47,8 @@
     "nsp": "^2.2.0",
     "pkgd": "^1.1.0",
     "promisify-event": "^1.0.0",
-    "read-pkg": "^1.1.0"
+    "read-pkg": "^1.1.0",
+    "snyk": "^1.49.4"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
@@ -57,5 +60,6 @@
     "eslint-plugin-babel": "^3.0.0",
     "mkdir-promise": "^1.0.0",
     "mocha": "^2.3.4"
-  }
+  },
+  "snyk": true
 }
